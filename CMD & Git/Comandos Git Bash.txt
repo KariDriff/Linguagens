@@ -9,7 +9,8 @@ git remote                                                | Mostra o nome do rep
 git remote add [nomeDoRepositório] [URL/SSHDoRepositório] | Adiciona o repositório local a um repositório remoto.
 git remote remove [nomeDRepositório]                      | Simplesmente desconecta o repositório local do remoto.
 git push                                                  | "Empurra" o código do repositório local para o repositório remoto.
-git pull [nomeDoRepositório] [nomeDoRamo]                 | "Puxa" o código do repositório remoto para o repositório local. O Nome do Ramo geralmente é "main" ou "master".
+git push --set-upstream [nomeDoRepositório] [nomeDoRamo]  | Para seu primeiríssimo commit, use este comando. O Nome do Ramo geralmente é "main" ou "master".
+git pull [nomeDoRepositório] [nomeDoRamo]                 | "Puxa" o código do repositório remoto para o repositório local. 
 >--Utilitários————————————————-----------------------------
 clear                                                     | Limpa o Git Bash.
 exit                                                      | Fecha o Git Bash.
