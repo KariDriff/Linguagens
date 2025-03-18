@@ -8,7 +8,7 @@ git status                                                | Checa o status dos a
 git remote                                                | Mostra o nome do repositório. Use add ou remove para adicionar ou remover o repositório local a/de um repositório remoto. Use -v para ver os repositórios remotos cadastrados.
 git remote add [nomeDoRepositório] [URL/SSHDoRepositório] | Adiciona o repositório local a um repositório remoto.
 git remote remove [nomeDRepositório]                      | Simplesmente desconecta o repositório local do remoto.
-git push                                                  | "Empurra" o código do repositório local para o repositório remoto.
+git push                                                  | "Empurra" o código do repositório local para o repositório remoto. Necessário um commit para usar este comando.
 git push --set-upstream [nomeDoRepositório] [nomeDoRamo]  | Para seu primeiríssimo commit, use este comando. O Nome do Ramo geralmente é "main" ou "master".
 git pull [nomeDoRepositório] [nomeDoRamo]                 | "Puxa" o código do repositório remoto para o repositório local. 
 >--Utilitários————————————————-----------------------------
