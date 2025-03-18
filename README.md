@@ -1,20 +1,15 @@
-# Olá! Este repositório é 
-- [x] Teste
-- [ ] Reste
+# Olá! Este repositório é um compilado de anotações de comandos importantes e comuns de variadas linguagens e terminais.
+Conteudo:
+- CMD
+- Git Bash
+- HTML
+- CSS 
+- JavaScript
+- ReactJS (É uma biblioteca, eu sei)
+- Java
+- MySQL
 
-``` System.out.println("Hello World"); ```
+_Pretendo pôr mais no futuro..._
 
-```
-String texto = "Hello World";
-
-System.out.println(texto);
-```
-***
-
-[^fn1]: Textando esse *rodapé*
-[^fn2]: Rodapé **2**
-
----
-~~traçado~~
-S~u~bscripto ~subscripto 2~
-S^u^perscripto ^superscripto 2^
+## Contato e contribuição
+Caso queira falar comigo ou queira acrescentar algo, entre em contato pelo e-mail: kaioalberth@hotmail.com

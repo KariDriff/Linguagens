@@ -3,7 +3,8 @@ git init                                                  | Inicializa o Git na 
 git config                                                | Faz uma configuração do Git, que pode ser de forma --global ou de forma --local. Use --list para ver a lista completa das configurações. Use --global --unset [Configuração] para remover uma configuração e, depois, --global [config] para adicioná-la com outra configuração.
 git add [nomeDoArquivo]                                   | Adiciona um arquivo ou pasta ao commit. Use * para dicionar tudo que foi modificado.
 git rm [NomeDoArquivo]                                    | Remove um arquivo ou pasta do commit. Use * para remover tudo.
-git commit -m                                             | Cria ou edita um commit com uma mensagem.
+git commit                                                | Cria ou edita um commit com uma mensagem numa janela dedicada.
+git commit -m                                             | Cria ou edita um commit com uma mensagem no próprio Git Bash.
 git status                                                | Checa o status dos arquivos, se estão Untracked, Unmodified, Modified ou Staged.
 git remote                                                | Mostra o nome do repositório. Use add ou remove para adicionar ou remover o repositório local a/de um repositório remoto. Use -v para ver os repositórios remotos cadastrados.
 git remote add [nomeDoRepositório] [URL/SSHDoRepositório] | Adiciona o repositório local a um repositório remoto.
@@ -31,9 +32,3 @@ TAB                                                       | Lista, de acordo com
 ↑/↓                                                       | Lista, de um em um, para cima ou para baixo, o histórico de comandos feitos.
 >--Atalhos-------------------------------------------------
 Ctrl+L                                                    | Move o histórico do Git Bash para cima.
->--Markdown------------------------------------------------
-#                                                         | Cria um título com o tamanho de acordo com a quantidade de # tiver.
-**                                                        | Ao utilizá-lo na frente e atrás de uma frase ou palavra, a torna em negrito.
-_                                                         | Ao utilizá-lo na frente e atrás de uma frase ou palavra, a torna em itálico.
--                                                         | Ao colocá-lo e der espaço, transformará a linha em uma lista.
-[[Palavra/Frase]]([URL])                                  | Associa um link a uma palavra ou frase.
