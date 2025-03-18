@@ -1,13 +1,13 @@
 # Olá! Este repositório é um compilado de anotações de comandos importantes e comuns de variadas linguagens e terminais.
 Conteudo:
-- CMD
-- Git Bash
-- HTML
-- CSS 
-- JavaScript
-- ReactJS (É uma biblioteca, eu sei)
-- Java
-- MySQL
+- [x] CMD
+- [x] Git Bash
+- [ ] HTML
+- [ ] CSS 
+- [ ] JavaScript
+- [ ] ReactJS (É uma biblioteca, eu sei)
+- [ ] Java
+- [ ] MySQL
 
 _Pretendo pôr mais no futuro..._
 
