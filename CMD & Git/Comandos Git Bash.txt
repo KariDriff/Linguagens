@@ -1,0 +1,38 @@
+>--Comum---------------------------------------------------
+git init                                                  | Inicializa o Git na pasta atual e possibilita o git a gerenciar o código.
+git config                                                | Faz uma configuração do Git, que pode ser de forma --global ou de forma --local. Use --list para ver a lista completa das configurações. Use --global --unset [Configuração] para remover uma configuração e, depois, --global [config] para adicioná-la com outra configuração.
+git add [nomeDoArquivo]                                   | Adiciona um arquivo ou pasta ao commit. Use * para dicionar tudo que foi modificado.
+git rm [NomeDoArquivo]                                    | Remove um arquivo ou pasta do commit. Use * para remover tudo.
+git commit -m                                             | Cria ou edita um commit com uma mensagem.
+git status                                                | Checa o status dos arquivos, se estão Untracked, Unmodified, Modified ou Staged.
+git remote                                                | Mostra o nome do repositório. Use add ou remove para adicionar ou remover o repositório local a/de um repositório remoto. Use -v para ver os repositórios remotos cadastrados.
+git remote add [nomeDoRepositório] [URL/SSHDoRepositório] | Adiciona o repositório local a um repositório remoto.
+git remote remove [nomeDRepositório]                      | Simplesmente desconecta o repositório local do remoto.
+git push                                                  | "Empurra" o código do repositório local para o repositório remoto.
+git pull [nomeDoRepositório] [nomeDoRamo]                 | "Puxa" o código do repositório remoto para o repositório local. O Nome do Ramo geralmente é "main" ou "master".
+>--Utilitários————————————————-----------------------------
+clear                                                     | Limpa o Git Bash.
+exit                                                      | Fecha o Git Bash.
+>--Diretórios—————————————————-----------------------------
+mkdir                                                     | "MaKe DIRectory", Cria uma pasta.
+cd                                                        | "Change Directory", Muda para a pasta especificada.
+cd ..                                                     | Volta para a pasta anterior.
+ls                                                        | "LiSt", Lista todos os arquivos e pastas da pasta atual.
+ls -a                                                     | Lista todos os arquivos e pastas da pasta atual incluindo pastas ocultas.
+pwd                                                       | Mostra o caminho completo da pasta atual.
+mv [Arquivo/Pasta] ./[Pasta]                              | "MoVe", Move um arquivo ou pasta da pasta atual para outra pasta.
+mv [Arquivo/Pasta] [Pasta]                                | Move um arquivo ou pasta de outra pasta para a pasta especificada.
+>--Outros--------------------------------------------------
+cat                                                       | Lê uma chave .pub.
+openssl                                                   | Abre a SSL especificada e a aplica em um arquivo. Use sha1.
+>--Teclas--------------------------------------------------
+TAB                                                       | Lista, de acordo com o que escreveu, os arquivos/pastas da pasta atual.
+↑/↓                                                       | Lista, de um em um, para cima ou para baixo, o histórico de comandos feitos.
+>--Atalhos-------------------------------------------------
+Ctrl+L                                                    | Move o histórico do Git Bash para cima.
+>--Markdown------------------------------------------------
+#                                                         | Cria um título com o tamanho de acordo com a quantidade de # tiver.
+**                                                        | Ao utilizá-lo na frente e atrás de uma frase ou palavra, a torna em negrito.
+_                                                         | Ao utilizá-lo na frente e atrás de uma frase ou palavra, a torna em itálico.
+-                                                         | Ao colocá-lo e der espaço, transformará a linha em uma lista.
+[[Palavra/Frase]]([URL])                                  | Associa um link a uma palavra ou frase.
