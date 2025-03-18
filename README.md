@@ -1,16 +1,20 @@
 # Olá! Este repositório é 
-(x) Teste
-( ) Reste
+- [x] Teste
+- [ ] Reste
 
-* Abruptly
-* CD
+``` System.out.println("Hello World"); ```
 
-- Tu trabalha com o quê?
-- Com C#!
+```
+String texto = "Hello World";
 
-+ Java
-+ ...Script
+System.out.println(texto);
+```
+***
 
-> Celeste
->
-> Cabreste
+[^fn1]: Textando esse *rodapé*
+[^fn2]: Rodapé **2**
+
+---
+~~traçado~~
+S~u~bscripto ~subscripto 2~
+S^u^perscripto ^superscripto 2^
