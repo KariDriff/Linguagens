@@ -1,0 +1,36 @@
+>--Comum----------------------------------------------------<
+  git init                                                  | Inicializa o Git na pasta atual e possibilita o git a gerenciar o código.
+  git clone [URLDoRepositórioRemoto]                        | Clona um repositório existente na sua máquina.
+  git config                                                | Faz uma configuração do Git, que pode ser de forma --global ou de forma --local. Use --list para ver a lista completa das configurações. Use --global --unset [Configuração] para remover uma configuração e, depois, --global [config] para adicioná-la com outra configuração.
+  git branch                                                | Mostra o ramo deste repositório. Use -a para mostrar todos os ramos.
+  git add [nomeDoArquivo]                                   | Adiciona um arquivo ou pasta ao commit. Use * para dicionar tudo que foi modificado.
+  git rm [NomeDoArquivo]                                    | apagaum arquivo ou pasta. Use * para apagar tudo.
+  git commit                                                | Cria ou edita um commit com uma mensagem numa janela dedicada.
+  git commit -m                                             | Cria ou edita um commit com uma mensagem no próprio Git Bash.
+  git status                                                | Checa o status dos arquivos, se estão Untracked, Unmodified, Modified ou Staged.
+  git remote                                                | Mostra o nome do repositório remoto. Use add ou remove para adicionar ou remover o repositório local a/de um repositório remoto. Use -v para ver os repositórios remotos cadastrados.
+  git remote add [nomeDoRepositório] [URL/SSHDoRepositório] | Adiciona o repositório local a um repositório remoto.
+  git remote remove [nomeDoRepositório]                     | Simplesmente desconecta o repositório local do remoto.
+  git push                                                  | "Empurra" o código do repositório local para o repositório remoto. Necessário um commit para usar este comando.
+  git push --set-upstream [nomeDoRepositório] [nomeDoRamo]  | Para seu primeiríssimo commit, use este comando. O Nome do Ramo geralmente é "main" ou "master".
+  git pull [nomeDoRepositório] [nomeDoRamo]                 | "Puxa" o código do repositório remoto para o repositório local. 
+>--Utilitários----------------------------------------------<
+  clear | Limpa o Git Bash.
+  exit  | Fecha o Git Bash.
+>--Diretórios------------------<
+  mkdir                        | "MaKe DIRectory", Cria uma pasta.
+  cd                           | "Change Directory", Muda para a pasta especificada.
+  cd ..                        | Volta para a pasta anterior.
+  ls                           | "LiSt", Lista todos os arquivos e pastas da pasta atual.
+  ls -a                        | Lista todos os arquivos e pastas da pasta atual incluindo pastas ocultas.
+  pwd                          | Mostra o caminho completo da pasta atual.
+  mv [Arquivo/Pasta] ./[Pasta] | "MoVe", Move um arquivo ou pasta da pasta atual para outra pasta.
+  mv [Arquivo/Pasta] [Pasta]   | Move um arquivo ou pasta de outra pasta para a pasta especificada.
+>--Outros----------------------<
+  cat     | Lê uma chave .pub.
+  openssl | Abre a SSL especificada e a aplica em um arquivo. Use sha1.
+>--Teclas--<
+  TAB | Lista, de acordo com o que escreveu, os arquivos/pastas da pasta atual.
+  ↑/↓ | Lista, de um em um, para cima ou para baixo, o histórico de comandos feitos.
+>--Atalhos--<
+  Ctrl+L | Move o histórico do Git Bash para cima.

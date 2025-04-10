@@ -1,0 +1,21 @@
+>--Parágrafo------------<
+  # [Palavra/Frase]     | Cria um título com o tamanho de acordo com a quantidade de # tiver.
+  - [Palavra/Frase]     | Transforma a linha em uma lista.
+  - [X] [Palavra/Frase] | Transforma a linha em uma lista com caixas de seleção marcadas.
+  - [ ] [Palavra/Frase] | Transforma a linha em uma lista com caixas de seleção desmarcadas.
+  + [Palavra/Frase]     | Transforma a linha em uma lista.
+  * [Palavra/Frase]     | Transforma a linha em uma lista.
+  1. [Palavra/Frase]    | Transforma a linha em uma lista ordenada.
+  > [Palavra/Frase]     | Cria um parágrafo de citação.
+  ``` [Código] ```      | Cria um bloco de código.
+>--Organização----------<
+  --- | Três traços (-) numa linha vazia criam uma divisória no texto
+  *** | Três asteriscos (*) numa linha vazia criam uma divisória no texto.
+>--Texto-------------------<
+  **[Palavra/Frase]**      | Torna o texto negrito.
+  __[Palavra/Frase]__      | Torna o texto negrito.
+  *[Palavra/Frase]*        | Torna o texto itálico.
+  _[Palavra/Frase]_        | Torna o texto itálico.
+  ~[Palavra/Texto]~        | Torna o texto traçado.
+  ~~[Palavra/Texto]~~      | Torna o texto traçado.
+  [[Palavra/Frase]]([URL]) | Associa um link a uma palavra ou frase.

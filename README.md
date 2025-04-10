@@ -7,7 +7,7 @@ Conteudo:
 - [ ] JavaScript
 - [ ] ReactJS (É uma biblioteca, eu sei)
 - [ ] Java
-- [ ] MySQL
+- [x] MySQL
 
 _Pretendo pôr mais no futuro..._
 

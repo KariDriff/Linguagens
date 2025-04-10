@@ -1,0 +1,96 @@
+Lembre-se de que estes são apenas comandos genéricos. Eles possuem várias combinações, eu apenas listei as mais comuns.
+
+>--Data Definition Language----------------------------------------------------------------------------
+  CREATE DATABASE [nomeDaBaseDeDados]                                                                 | Cria uma base de dados.
+  USE [nomeDaBaseDeDados]                                                                             | Seleciona uma base de dados como padrão.
+  DROP DATABASE [nomeDaBaseDeDados]                                                                   | Apaga (irreversivelmente) uma base de dados
+  CREATE TABLE [nomeDaTabela]                                                                         | Cria uma tabela.
+  DROP TABLE [nomeDaTabela]                                                                           | Apaga (irreversivelmente) uma tabela.
+  TRUNCATE TABLE [nomeDaTabela]                                                                       | Apaga (irreversivelmente) todos os dados de uma tabela.
+  ALTER TABLE [nomeDaTabela] ADD [novaColuna] [tipoDaNovaColuna]                                      | Adiciona uma nova coluna a uma tabela.
+    ALTER TABLE [nomeDaTabela] ADD [novaColuna] [tipoDaNovaColuna] [AFTER/BEFORE] [nomeDeOutraColuna] | Adiciona um novo atributo a uma tabela após (AFTER) ou antes (BEFORE) outro atributo.
+    ALTER TABLE [nomeDaTabela] DROP COLUMN [nomeDaColuna]                                             | Apaga (irreversivelmente) uma coluna de uma tabela.
+    ALTER TABLE [nomeDaTabela] MODIFY COLUMN [nomeDaColuna]                                           | Altera o tipo de uma coluna de uma tabela.
+>--Data Manipulation Language--------------------------------------------------------------------------
+  INSERT INTO [nomeDaTabela] ([nomeDaColuna]) VALUES ([Valor])                        | Insere uma nova linha preenchendo os atributos com os valores fornecidos.
+  UPDATE [nomeDaTabela] SET [nomeDaColuna]=[novoValor]                                | Atualiza (reescreve) o valor de uma (ou várias) coluna numa tabela.
+    UPDATE [nomeDaTabela] SET [nomeDaColuna]=[novoValor] WHERE [nomeDaColuna]=[Valor] | Atualiza (reescreve) o valor de uma (ou várias) coluna numa tabela na qual possua um valor especificado em outra (ou na mesma) coluna.
+  DELETE FROM [nomeDaTabela]                                                          | Apaga (irreversivelmente) todos os valores de uma tabela.
+    DELETE FROM [nomeDaTabela] WHERE [nomeDaColuna]=[Valor]                           | Apaga (irreversivelmente) um valor de uma coluna numa tabela.
+>--Data Query Language-----------------------------------------------------------------
+  SELECT [nomeDaColuna] FROM [nomeDaTabela]                                      | Seleciona um atributo de uma tabela. Use * para selecionar tudo.
+    SELECT [nomeDaColuna] FROM [nomeDaTabela] ORDER BY [nomeDaColuna]            | Organiza as linhas de uma tabela de acordo com um atributo.
+    SELECT [nomeDaColuna] FROM [nomeDaTabela] ORDER BY [nomeDaColuna] [ASC/DESC] | Organiza as linhas de uma tabela de acordo com um atributo na ordem crescente (ASC) ou decrecente (DESC).
+>--Data Control Language----------------------------------------------------------------------------------------
+  GRANT [Privilégios] ON [nomeDaBaseDeDados] TO [nomeDoUsuário] IDENTIFIED BY [Senha]                          | Concede privilégios a um usuário com uma senha. Todas as variantes podem usar o IDENTIFIED BY.
+    GRANT ALL ON [nomeDaBaseDeDados] TO [nomeDoUsuário]                                                        | Concede todos os privilégios a um usuário.
+    GRANT ALL PRIVILEGES ON [nomeDaBaseDeDados] TO [nomeDoUsuário]                                             | Mesma coisa.
+    GRANT ALL ON [baseDeDados].[nomeDaTabela] TO [nomeDoUsuário]                                               | Concede todos os privilégios a um usuário em uma tabela específica de uma base de dados.
+    GRANT INSERT,UPDATE,DELETE ON [baseDeDados] TO [nomeDoUsuário]                                             | Concede privilégios da DML a um usuário.
+    GRANT SELECT ON [baseDeDados] TO [nomeDoUsuário]                                                           | Concede privilégios da DQL a um usuário.
+    GRANT SELECT ([nomeDaColuna]) ON [baseDeDados].[nomeDaTabela] TO [nomeDoUsuário]                           | Concede privilégios da DQL a um usuário para selecinar colunas específicas de uma tabela.
+    GRANT SELECT ([nomeDaColuna]), UPDATE ([nomeDaColuna]) ON [baseDeDados].[nomeDaTabela] TO [nomeDoUsuário]  | Concede privilégios da DQL a um usuário para selecinar e atualizar colunas específicas de uma tabela.
+  REVOKE [Privilégios] ON [nomeDaBaseDeDados] FROM [nomeDoUsuário]                                             | Remove privilégios de um usuário. Todas as variantes do GRANT servem no REVOKE, exceto pelo IDENTIFIED BY.
+  SHOW GRANTS FOR [nomeDoUsuário]                                                                              | Mostra os privilégios de um usuário.
+>--Data Transaction Language------------------------------------------------------------------------------------
+  BEGIN TRANSACTION    | Inicia uma transação. Tudo o que estiver entre o BEGIN e o COMMIT será aplicado à base de dados.
+  COMMIT							 | Aplica as alterações feitas entre este e o BEGIN à base de dados.
+  ROLLBACK TRANSACTION | Desfaz todas as alterações feitas entre este e o BEGIN.
+>--Tipos de dados-------------------------------------------------
+  [nomeDaColuna] BIGINT([númeroDeDígitos])                       | Valores numéricos inteiros (-9.223.372.036.854.775.808 até 9.223.372.036.854.775.807 para números inteiros e de 0 até 18.446.744.073.709.551.615 para positivos) com um limite de dígitos especificado.
+  [nomeDaColuna] MEDIUMINT([númeroDeDígitos])                    | Valores numéricos inteiros (-8.388.608 até 8.388.607 para números inteiros e 0 até 16.777.215) com um limite de dígitos especificado.
+  [nomeDaColuna] INT([númeroDeDígitos])                          | Valores numéricos inteiros (-2.147.483.648 até 2147483647 para números inteiros e 0 até 4.294.967.295 para positivos) com um limite de dígitos especificado.
+  [nomeDaColuna] INTEGER([númeroDeDígitos])                      | Mesma coisa.
+  [nomeDaColuna] SMALLINT([númeroDeDígitos])                     | Valores numéricos inteiros (-32.768 até 32.767 para números inteiros e 0 até 65535 para positivos) com um limite de dígitos especificado.
+  [nomeDaColuna] TINYINT([númeroDeDígitos])                      | Valores numéricos inteiros (-128 até 127 para números inteiros e 0 a 255 para positivos) com um limite de dígitos especificado.
+  [nomeDaColuna] BIT([númeroDeDígitos])                          | Valores numéricos inteiros (1 a 64) com um limite obrigatoriamente especificado. Caso não especificado, o padrão é 1.
+  [nomeDaColuna] FLOAT([Precisão])                               | Valores numéricos decimais com um limite de precisão obrigatoriamente especificado (0 a 53). Se o valor estiver entre 0 e 24, ele será armazenado como um FLOAT, se estiver entre 25 e 53, ele será armazenado como um DOUBLE.
+  [nomeDaColuna] DOUBLE([númeroDeDígitos], [casasApósAVirgula])  | Valores numéricos decimais com um limite de dígitos e casas após a vírgula obrigatoriamente especificados.
+  [nomeDaColuna] DECIMAL([númeroDeDígitos], [casasApósAVirgula]) | Valores numéricos decimais com um limite de dígitos (0 a 65) e casas após a vírgula (0 a 10) especificados. Caso não especificado, o padrão é 10 e 0, respectivamente.
+  [nomeDaColuna] BOOLEAN                                         | Valores booleanos (0 ou 1).
+  [nomeDaColuna] BOOL                                            | Mesma coisa.
+  [nomeDaColuna] VARCHAR([Quantidade])                           | Valores String (letras, números e caracteres especiais) com um limite de caracteres obrigatoriamente especificado (0 a 65.535).
+  [nomeDaColuna] CHAR([Quantidade])                              | Valores String fixos (caso o valor inserido não chegue o limite, o resto é preenchido com espaços) com um limite de caracteres especificado (0 a 255). Caso não especificado, o padrão é 1.
+  [nomeDaColuna] TINYTEXT                                        | Valores String com um limite de 255 caracteres.
+  [nomeDaColuna] TEXT()                                          | Valores String com um limite de 65.535 caracteres.
+  [nomeDaColuna] MEDIUMTEXT                                      | Valores String com um limite de 16.777.215 caracteres.
+  [nomeDaColuna] LONGTEXT                                        | Valores String com um limite de 4.294.967.295 caracteres.
+  [nomeDaColuna] DATE                                            | Valores de data que devem ser inseridos no formato ano-mês-dia. Exemplo: 2023-10-01.
+  [nomeDaColuna] TIME                                            | Valores de hora que devem ser inseridos no formato hora:minuto:segundo. Exemplo: 12:34:56
+    [nomeDaColuna] TIME([limiteDePrecisão])                      | Mesma coisa, porém com um limite de precisão (0 a 6) para os segundos, sendo esses valores o número de casas após a vírgula. Exemplo: com uma precisão de 3, o valor 12:34:56.789 será aceito.
+  [nomeDaColuna] DATETIME                                        | Valores de data e hora que devem ser inseridos no formato: ano-mês-dia hora:minuto:segundo. Exemplo: 2023-10-01 12:34:56.
+    [nomeDaColuna] DATETIME ON UPDATE CURRENT_TIMESTAMP          | Mesma coisa, porém a data atual será inserida automaticamente quando a linha for atualizada, sobrescrevendo o valor anterior.
+    [nomeDaColuna] DATETIME DEFAULT CURRENT_TIMESTAMP            | Mesma coisa, porém a data inserida será a data atual caso não especificada.
+    [nomeDaColuna] DATETIME([limiteDePrecisão])                  | Mesma coisa, porém com um limite de precisão (0 a 6) para os segundos, sendo esses valores o número de casas após a vírgula. Exemplo: com uma precisão de 3, o valor 12:34:56.789 será aceito.
+  NULL                                                           | Quando a coluna está vazia. Não é possível definir, no momento de sua criação, uma coluna como vazia, já que ela já estará vazia quando a criar.
+>--Constraints (Restrições)--------------------------------------------------------------------------------------------------------------------------
+  NOT NULL: [nomeDaColuna] [tipoDaColuna] NOT NULL                                                                                                  | Garante que esta coluna não deve estar vazia ao inserir uma nova linha.
+  UNIQUE([nomeDaColuna])                                                                                                                            | Garante que nenhuma outra linha terá um valor repetido.
+    CONSTRAINT [nomeDaRestrição] UNIQUE([nomeDaColuna])                                                                                             | Garante que nenhuma outra linha terá um valor repetido, porém nomeia a restrição para facilitar removê-la depois.
+  PRIMARY KEY: [nomeDaColuna] [tipoDaColuna] PRIMARY KEY                                                                                            | Um misto de NOT NULL e UNIQUE.
+    PRIMARY KEY ([nomeDaColuna])                                                                                                                    | A mesma coisa.
+    CONSTRAINT [nomeDaRestrição] PRIMARY KEY ([nomeDaColuna])                                                                                       | Um misto de NOT NULL e UNIQUE, porém nomeia a restrição para facilitar removê-la depois.
+    ALTER TABLE [nomeDaTabela] DROP PRIMARY KEY                                                                                                     | Apaga a chave primária de uma tabela.
+  FOREIGN KEY ([nomeDaColuna]) REFERENCES [nomeDeOutraTabela]([nomeDaColunaDaTabela])                                                               | Liga uma coluna de uma tabela com outra de outra tabela.
+    ALTER TABLE [nomeDaTabela] ADD FOREIGN KEY ([nomeDaColuna]) REFERENCES [nomeDeOutraTabela]([nomeDaColunaDaTabela])                              | Mesma coisa, porém com uma tabela existente.
+    ALTER TABLE [nomeDaTabela] ADD CONSTRAINT [nomeDaRestrição] FOREIGN KEY ([nomeDaColuna]) REFERENCES [nomeDeOutraTabela]([nomeDaColunaDaTabela]) | Mesma coisa, mas nomeando a restrição.
+    ALTER TABLE [nomeDaTabela] DROP FOREIGN KEY [nomeDaRestrição]                                                                                   | Apaga a chave estrangeira de uma tabela.
+  CREATE INDEX [nomeDaRestrição] ON [nomeDaTabela]([nomeDaColuna])                                                                                  | Cria um índice numa tabela.
+    ALTER TABLE [nomeDaTabela] DROP INDEX [nomeDaRestrição]                                                                                         | Apaga um índice de uma tabela.
+  CHECK ([Condição])                                                                                                                                | Faz com que uma coluna só receba valores exatos ou dentro de um intervalo.
+    CONSTRAINT [nomeDaRestrição] CHECK ([Condições])                                                                                                | Faz com que uma (ou várias) coluna só receba valores exatos ou dentro de um intervalo, também nomeando a restrição.
+    ALTER TABLE [nomeDaTabela] DROP CHECK [nomeDaRestrição]                                                                                         | Apaga um CHECK de uma tabela.
+  DEFAULT: [nomeDaColuna] [tipoDaColuna] DEFAULT [Valor]                                                                                            | Adiciona um valor padrão caso um valor não seja especificado no momento da inserção da linha.
+    ALTER TABLE [nomeDaTabela] ALTER [nomeDaColuna] SET DEFAULT [Valor]                                                                             | Adiciona um valor padrão a uma coluna de uma tabela existente.
+    ALTER TABLE [nomeDaTabela] ALTER [nomeDaColuna] DROP DEFAULT                                                                                    | Apaga o valor padrão de uma coluna de uma tabela existente.
+  AUTO_INCREMENT: [nomeDaColuna] [tipoDaColuna] AUTO_INCREMENT                                                                                      | Faz com que a coluna (geralmente uma coluna de id) automaticamente incremente o valor a cada linha inserida, fazendo com que cada linha possua um valor distinto.
+    ALTER TABLE [nomeDaTabela] AUTO_INCREMENT=100                                                                                                   | Faz o incremento automático comece a partir de um número específico (neste caso, 100).
+
+  Todos estes podem ser combinados com os comandos acima.                                              
+>--Outros comandos da sintaxe------------------------------------------------------------------------------------------------------------------------
+  OR: SELECT * FROM tabela WHERE [Condição1] OR [Condição2]               | "OU". Para adicionar uma condição opcional a mais quando for alterar, inserir ou deletar algo da base de dados.
+  AND: SELECT * FROM tabela WHERE [Condição1] AND [Condição2]             | "E". Para adicionar uma condição obrigatória a mais quando for alterar, inserir ou deletar algo da base de dados.
+  NOT: SELECT * FROM tabela WHERE NOT [Condição1]                         | "NÃO". Para negar uma condição quando for alterar, inserir ou deletar algo da base de dados.
+  IS NULL/IS NOT NULL: SELECT * FROM tabela WHERE [Condição1] IS NOT NULL | "É NULO"/"NÃO É NULO". Para mostrar linhas que possuem colunas nulas ou não nulas.
+
+  Todos estes podem ser combinados com os comandos acima.

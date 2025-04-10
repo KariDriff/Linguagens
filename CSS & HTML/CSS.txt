@@ -1,0 +1,71 @@
+>--Escopos----------------------------------
+  #[nomeDoID] {Comandos}                     | Relaciona os comandos entre {} ao id do comando HTML.
+  .[nomeDaClasse] [comandoDoHTML] {Comandos} | Relaciona os comandos entre {} à classe do comando HTML.
+  * {Comandos}                               | Aplica os comandos entre {} a todo o projeto.
+>--@----------------------------------------
+  @keyframes [nomeDaAnimação]                | Permite editar a animação em certos pontos da mesma.
+  @media ([Condição]) {[Comandos]}           | Permite fazer o código (a página) se adaptar a diferentes condições especificadas.
+  @import [URL]
+——————————————————————
+  :hover               | Faz o código entre chaves funcionar quando o ponteiro do mouse passar sobre o elemento.
+  :checked             | Faz o código entre chaves funcionar quando a caixa de seleção estiver marcada.
+  ::before             | Define como será o elemento antes do acima.
+——————————————————————
+  cursor:              | Permite controlar o cursor.
+  color:               | Muda a cor de algo.
+  box-shadow:          | Permite simular uma "sombra" em um objeto.
+  filter:              | Adiciona um filtro à imagem.
+  opacity:             | Muda a opacidade do objeto.
+  visibility:          | Muda a visibilidade do objeto.
+  content:             | 
+  background:          | Muda o fundo (normalmente usando em body).
+  padding:             | Muda o espaçamento entre o conteúdo e a borda.
+  border:              | Muda a cor, tipo e largura da borda do padding.
+  margin:              | Muda o espaçamento entre a borda e a margem.
+  position:            | Define o tipo de posição de um elemento na página.
+  display:             | "Determina o tipo de caixa que é gerada para um elemento.".
+  z-index              | Traz um elemento para frente, ou para trás.
+  top:                 | Determina a posição a partir de cima.
+  bottom:              | Determina a posição a partir de baixo.
+  left:                | Determina a posição a partir da esquerda.
+  right:               | Determina a posição a partir da direita.
+  transition:          | Define a transição entre dois estados do elemento.
+  animation:           | Permite mudar (ou criar) as proriedades de uma animação.
+  transform:           | Transforma o elemento nas direções x e y.
+  width:               | Muda a largura do objeto (normalmente usado em body).
+  height:              | Muda a altura do objeto (normalment usado em body.
+  max-width:           | Define a largura máxima do objeto.
+  max-height:          | Define a altura máxima do objeto.
+  box-sizing:          | Define o tipo de caixa.
+  justify-content:     | Alinha os elementos na horizontal.
+  align-items:         | Alinha os elementos na vertical.
+  flex-direction:      | Define como objetos flex são colocados em um container.
+  font-size:           | Muda o tamanho da fonte de um elemento de texto.
+  font-style:          | Muda o estilo da fonte de um elemento de texto.
+  font-weight:         | Muda o "peso" da fonte.
+  font-family:         | Muda a família de fonte.
+  text-transform:      | Transforma o texto.
+  text-decoration:     | Decora o texto, colocando linhas.
+  text-align:          | Alinha o texto à esquerda, direita, cima, baixo ou centro.
+  letter-spacing:      | Define o espaçamento entre letras
+  list-style-type:     | Muda o marcador da lista.
+  list-style-image:    | Muda o marcador da lista para uma imagem. Use url("[fl dir]") para especificar a imagem.
+——————————————————————
+  background-color:    | Muda a cor do fundo.
+  backgroung-image:    | Usa uma imagem como fundo.
+  background-position: | Muda a posição do fundo.
+  background-repeat:   | Define como o fundo será repetido caso a área em que se situa esteja maior que ele.
+  background-size:     | Muda o tamanho do fundo.
+  padding-top:         | Muda o espaçamento de cima.
+  padding-bottom:      | Muda o espaçamento de baixo.
+  padding-right:       | Muda o espaçamento da direita.
+  padding-left:        | Muda o espaçamento da esquerda.
+  border-top:          | Muda a borda de cima.
+  border-bottom:       | Muda a borda de baixo.
+  border-right:        | Muda a borda da direita.
+  border-left:         | Muda a borda da esquerda.
+  border-width:        | Muda a grossura da borda.
+  border-color:        | Muda a cor da borda.
+  border-style:        | Muda o estilo da borda.
+  border-[sd]-[prp]:   | Muda, especificamente, um lado da borda e sua propriedade.
+  border-radius:       | Muda o raio da borda da borda (max.: 50%). Segue o mesmo padrão dos comandos acima.

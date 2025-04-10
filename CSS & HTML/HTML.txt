@@ -1,0 +1,59 @@
+Todo arquivo deve começar com:
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Title Example</title>
+ </head>
+ <body>
+  Body example
+ </body>
+</html>
+
+A partir daí, a criatividade é o limite.
+
+>--Básico-----------------------------------
+  <!DOCTYPE html>                          | Diz ao navegador que a página lida com a linguagem html.
+  <html> [Conteúdo] </html>                | Raiz do código.
+  <head> [Conteúdo] </head>                | A "cabeça" da página.
+  <body> [Conteúdo] </body>                | O "corpo" da página.
+  <title> [Conteúdo] </title>              | O título da página.
+  <section> [Conteúdo] </section>          | Seção genérica da página.
+  <header> [Conteúdo] </header>            | Cabeçalho da página ou de uma <section> dela.
+  <article> [Conteúdo] </article>	         | Um "conteúdo interessante" da sua página.
+  <aside> [Conteúdo] </aside>              | Conteúdo relacionado ao principal.
+  <footer> [Conteúdo] </footer>            | Rodapé da página ou de uma <section> dela.
+  <div> [Conteúdo] </div>                  | Uma parte genérica da página, normalmente usada para utilizar o CSS nela.
+  <main> [Conteúdo] </main>                | A parte principal da página.
+  <nav> [Conteúdo] </nav>                  | Uma seção da página que possui links que levarão a outra parte da página ou outras páginas.
+  <br>                                     | Quebra de linha.
+>--Formatação de parágrafo------------------
+  <h1> [Texto] </h1>                       | Título de um texto da página. Use apenas um <h1> por página. Vai até <h6>.
+  <p> [Texto] </p>                         | Organiza o texto em um parágrafo.
+  <ul> <li> [Conteúdo] </li> </ul>         | Insere uma lista sem ordem.
+  <ol> <li> [Conteúdo] </li> </ol>         | Insere uma lista com ordem.
+  <li> [Conteúdo] </li>                    | Item das duas listas acima.
+>--Conteúdo---------------------------------
+  <a [URL]                                 | Links.
+  <img src="[URL]">                        | Insere uma imagem.
+  <img alt="[Texto]">                      | A descrição da imagem, caso ela não carregue.
+  <link rel="[Relação]">                   | Define o tipo de relacionamento entre a página e outro arquivo; normalmente um CSS.
+  <link href="[URL/caminhoDeUmArquivo]">   | Caminho para o arquivo.
+  <script [URL/caminhoDeUmArquivo]>        | Relaciona a página com um script (normalmente um JS).
+  <input [Metadado]> [Texto] </input>      | Cria uma caixa em que o usuário possa interagir.
+  <input type="[tipoDeInput]">             | Define o tipo de interação que o usuário pode fazer. Um exemplo é submit.
+  <label [Metadado]> [Texto] </input>      | Mostra algo dependendo do <input>.
+  <label for="[Algo]">                     | Indica ao quê este comando referencia. Um exemplo é css.
+  <button type="button"> [Texto] </button> | Cria um botão
+  <button name="[Texto]">                  | Dá um nome ao botão.
+  <button onclick="[Comando]">             | Executa uma ação quando o botão for clicado.
+>--Metadados--------------------------------
+  <html lang="[Idioma]">                   | Diz ao navegadr o idioma da página. Um exemplo é pt-br.
+  <meta [Metadado]>                        | Metadados. Um exemplo é o charset.
+  <meta charset=[Codificação]>             | Diz ao navegador qual a codificação de caracteres. Use utf-8.
+  <a href="[URL]">                         | Relaciona um link a um texto.
+  <a href="mailto:[E-mail]">               | Ao relacioná-lo a um texto, o mesmo irá te redirecionar ao envio de um E-Mail ao E-Mail especificado.
+  <a target="[Página]">                    | Colocado logo após href="", diz como o link será aberto. Use _blank para abrir em outra guia.
+>--Conexão com CSS--------------------------
+  <[comandoDoHTML] id="[Texto]">           | Cria uma identificação para o comando especificado, isso faz com que o comando não se repita. (Cheque as primeiras linhas no CSS.txt).
+  <[comandoDoHTML] class="[Texto]">        | Cria um tipo de comando que pode abrigar vários. (Cheque as primeiras linhas no CSS.txt).
