@@ -2,8 +2,8 @@
 Conteudo:
 - [x] CMD
 - [x] Git Bash
-- [ ] HTML
-- [ ] CSS 
+- [x] HTML
+- [x] CSS 
 - [ ] JavaScript
 - [ ] ReactJS (É uma biblioteca, eu sei)
 - [ ] Java
