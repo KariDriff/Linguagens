@@ -1,6 +1,6 @@
 Lembre-se de que estes são apenas comandos genéricos. Eles possuem várias combinações, eu apenas listei as mais comuns.
 
->--Data Definition Language----------------------------------------------------------------------------
+>--Data Definition Language---------------------------------------------------------------------------<
   CREATE DATABASE [nomeDaBaseDeDados]                                                                 | Cria uma base de dados.
   USE [nomeDaBaseDeDados]                                                                             | Seleciona uma base de dados como padrão.
   DROP DATABASE [nomeDaBaseDeDados]                                                                   | Apaga (irreversivelmente) uma base de dados
@@ -11,17 +11,17 @@ Lembre-se de que estes são apenas comandos genéricos. Eles possuem várias com
     ALTER TABLE [nomeDaTabela] ADD [novaColuna] [tipoDaNovaColuna] [AFTER/BEFORE] [nomeDeOutraColuna] | Adiciona um novo atributo a uma tabela após (AFTER) ou antes (BEFORE) outro atributo.
     ALTER TABLE [nomeDaTabela] DROP COLUMN [nomeDaColuna]                                             | Apaga (irreversivelmente) uma coluna de uma tabela.
     ALTER TABLE [nomeDaTabela] MODIFY COLUMN [nomeDaColuna]                                           | Altera o tipo de uma coluna de uma tabela.
->--Data Manipulation Language--------------------------------------------------------------------------
+>--Data Manipulation Language-------------------------------------------------------------------------<
   INSERT INTO [nomeDaTabela] ([nomeDaColuna]) VALUES ([Valor])                        | Insere uma nova linha preenchendo os atributos com os valores fornecidos.
   UPDATE [nomeDaTabela] SET [nomeDaColuna]=[novoValor]                                | Atualiza (reescreve) o valor de uma (ou várias) coluna numa tabela.
     UPDATE [nomeDaTabela] SET [nomeDaColuna]=[novoValor] WHERE [nomeDaColuna]=[Valor] | Atualiza (reescreve) o valor de uma (ou várias) coluna numa tabela na qual possua um valor especificado em outra (ou na mesma) coluna.
   DELETE FROM [nomeDaTabela]                                                          | Apaga (irreversivelmente) todos os valores de uma tabela.
     DELETE FROM [nomeDaTabela] WHERE [nomeDaColuna]=[Valor]                           | Apaga (irreversivelmente) um valor de uma coluna numa tabela.
->--Data Query Language-----------------------------------------------------------------
+>--Data Query Language----------------------------------------------------------------<
   SELECT [nomeDaColuna] FROM [nomeDaTabela]                                      | Seleciona um atributo de uma tabela. Use * para selecionar tudo.
     SELECT [nomeDaColuna] FROM [nomeDaTabela] ORDER BY [nomeDaColuna]            | Organiza as linhas de uma tabela de acordo com um atributo.
     SELECT [nomeDaColuna] FROM [nomeDaTabela] ORDER BY [nomeDaColuna] [ASC/DESC] | Organiza as linhas de uma tabela de acordo com um atributo na ordem crescente (ASC) ou decrecente (DESC).
->--Data Control Language----------------------------------------------------------------------------------------
+>--Data Control Language---------------------------------------------------------------------------------------<
   GRANT [Privilégios] ON [nomeDaBaseDeDados] TO [nomeDoUsuário] IDENTIFIED BY [Senha]                          | Concede privilégios a um usuário com uma senha. Todas as variantes podem usar o IDENTIFIED BY.
     GRANT ALL ON [nomeDaBaseDeDados] TO [nomeDoUsuário]                                                        | Concede todos os privilégios a um usuário.
     GRANT ALL PRIVILEGES ON [nomeDaBaseDeDados] TO [nomeDoUsuário]                                             | Mesma coisa.
@@ -32,11 +32,11 @@ Lembre-se de que estes são apenas comandos genéricos. Eles possuem várias com
     GRANT SELECT ([nomeDaColuna]), UPDATE ([nomeDaColuna]) ON [baseDeDados].[nomeDaTabela] TO [nomeDoUsuário]  | Concede privilégios da DQL a um usuário para selecinar e atualizar colunas específicas de uma tabela.
   REVOKE [Privilégios] ON [nomeDaBaseDeDados] FROM [nomeDoUsuário]                                             | Remove privilégios de um usuário. Todas as variantes do GRANT servem no REVOKE, exceto pelo IDENTIFIED BY.
   SHOW GRANTS FOR [nomeDoUsuário]                                                                              | Mostra os privilégios de um usuário.
->--Data Transaction Language------------------------------------------------------------------------------------
+>--Data Transaction Language-----------------------------------------------------------------------------------<
   BEGIN TRANSACTION    | Inicia uma transação. Tudo o que estiver entre o BEGIN e o COMMIT será aplicado à base de dados.
   COMMIT							 | Aplica as alterações feitas entre este e o BEGIN à base de dados.
   ROLLBACK TRANSACTION | Desfaz todas as alterações feitas entre este e o BEGIN.
->--Tipos de dados-------------------------------------------------
+>--Tipos de dados------------------------------------------------<
   [nomeDaColuna] BIGINT([númeroDeDígitos])                       | Valores numéricos inteiros (-9.223.372.036.854.775.808 até 9.223.372.036.854.775.807 para números inteiros e de 0 até 18.446.744.073.709.551.615 para positivos) com um limite de dígitos especificado.
   [nomeDaColuna] MEDIUMINT([númeroDeDígitos])                    | Valores numéricos inteiros (-8.388.608 até 8.388.607 para números inteiros e 0 até 16.777.215) com um limite de dígitos especificado.
   [nomeDaColuna] INT([númeroDeDígitos])                          | Valores numéricos inteiros (-2.147.483.648 até 2147483647 para números inteiros e 0 até 4.294.967.295 para positivos) com um limite de dígitos especificado.
@@ -63,7 +63,7 @@ Lembre-se de que estes são apenas comandos genéricos. Eles possuem várias com
     [nomeDaColuna] DATETIME DEFAULT CURRENT_TIMESTAMP            | Mesma coisa, porém a data inserida será a data atual caso não especificada.
     [nomeDaColuna] DATETIME([limiteDePrecisão])                  | Mesma coisa, porém com um limite de precisão (0 a 6) para os segundos, sendo esses valores o número de casas após a vírgula. Exemplo: com uma precisão de 3, o valor 12:34:56.789 será aceito.
   NULL                                                           | Quando a coluna está vazia. Não é possível definir, no momento de sua criação, uma coluna como vazia, já que ela já estará vazia quando a criar.
->--Constraints (Restrições)--------------------------------------------------------------------------------------------------------------------------
+>--Constraints (Restrições)-------------------------------------------------------------------------------------------------------------------------<
   NOT NULL: [nomeDaColuna] [tipoDaColuna] NOT NULL                                                                                                  | Garante que esta coluna não deve estar vazia ao inserir uma nova linha.
   UNIQUE([nomeDaColuna])                                                                                                                            | Garante que nenhuma outra linha terá um valor repetido.
     CONSTRAINT [nomeDaRestrição] UNIQUE([nomeDaColuna])                                                                                             | Garante que nenhuma outra linha terá um valor repetido, porém nomeia a restrição para facilitar removê-la depois.
@@ -87,10 +87,19 @@ Lembre-se de que estes são apenas comandos genéricos. Eles possuem várias com
     ALTER TABLE [nomeDaTabela] AUTO_INCREMENT=100                                                                                                   | Faz o incremento automático comece a partir de um número específico (neste caso, 100).
 
   Todos estes podem ser combinados com os comandos acima.                                              
->--Outros comandos da sintaxe------------------------------------------------------------------------------------------------------------------------
-  OR: SELECT * FROM tabela WHERE [Condição1] OR [Condição2]               | "OU". Para adicionar uma condição opcional a mais quando for alterar, inserir ou deletar algo da base de dados.
-  AND: SELECT * FROM tabela WHERE [Condição1] AND [Condição2]             | "E". Para adicionar uma condição obrigatória a mais quando for alterar, inserir ou deletar algo da base de dados.
-  NOT: SELECT * FROM tabela WHERE NOT [Condição1]                         | "NÃO". Para negar uma condição quando for alterar, inserir ou deletar algo da base de dados.
-  IS NULL/IS NOT NULL: SELECT * FROM tabela WHERE [Condição1] IS NOT NULL | "É NULO"/"NÃO É NULO". Para mostrar linhas que possuem colunas nulas ou não nulas.
+>--Outros comandos da sintaxe-----------------------------------------------------------------------------------------------------------------------<
+  OR: SELECT * FROM tabela WHERE [Condição1] OR [Condição2]                                                                 | "OU". Para adicionar uma condição opcional a mais quando for alterar, inserir ou deletar algo da base de dados.
+  AND: SELECT * FROM tabela WHERE [Condição1] AND [Condição2]                                                               | "E". Para adicionar uma condição obrigatória a mais quando for alterar, inserir ou deletar algo da base de dados.
+  NOT: SELECT * FROM tabela WHERE NOT [Condição1]                                                                           | "NÃO". Para negar uma condição quando for alterar, inserir ou deletar algo da base de dados.
+  IS NULL/IS NOT NULL: SELECT * FROM tabela WHERE [Condição1] IS NOT NULL                                                   | "É NULO"/"NÃO É NULO". Para mostrar linhas que possuem colunas nulas ou não nulas.
+  LIKE: SELECT [colunaDeTexto] FROM tabela WHERE LIKE 'a%'                                                                  | "Parecido". Para selecionar apenas as linhas cujos valores numa coluna começam com A.
+    LIKE: SELECT [colunaDeTexto] FROM tabela WHERE LIKE '%a'                                                                | "Parecido". Para selecionar apenas as linhas cujos valores numa coluna terminam com A.
+    LIKE: SELECT [colunaDeTexto] FROM tabela WHERE LIKE '%a%'                                                               | "Parecido". Para selecionar apenas as linhas cujos valores numa coluna possuem A em algum lugar.
+    LIKE: SELECT [colunaDeTexto] FROM tabela WHERE LIKE '_a%'                                                               | "Parecido". Para selecionar apenas as linhas cujos valores numa coluna possuem A no segundo dígito.
+    LIKE: SELECT [colunaDeTexto] FROM tabela WHERE LIKE 'a_%'                                                               | "Parecido". Para selecionar apenas as linhas cujos valores numa coluna começam com A e tem pelo menos 2 dígitos.
+  BETWEEN: SELECT [nomeDaColuna] FROM tabela WHERE [nomeDaColuna] BETWEEN [número/data/texto] AND [número/data/texto]       | "Está entre". Para selecionar apenas as linhas cujos valores numa coluna estão dentro de determinado intervalo.
+    BETWEEN: SELECT [nomeDaColuna] FROM tabela WHERE [nomeDaColuna] NOT BETWEEN [número/data/texto] AND [número/data/texto] | "Não está entre". Para selecionar apenas as linhas cujos valores numa coluna não estão dentro de determinado intervalo.
+  IN: SELECT [nomeDaColuna] FROM [nomeDaTabela] WHERE [nomeDaColuna] IN ([Valor])                                           | "Em". Para selecionar apenas as linhas cuja coluna especificada no segundo espaço de coluna possuem os valores especificados.
+    NOT IN: SELECT [nomeDaColuna] FROM [nomeDaTabela] WHERE [nomeDaColuna] NOT IN ([Valor])                                 | "Em". Para selecionar apenas as linhas cuja coluna especificada no segundo espaço de coluna não possuem os valores especificados.
 
   Todos estes podem ser combinados com os comandos acima.
